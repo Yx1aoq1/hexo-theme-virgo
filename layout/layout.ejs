@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="<%=config.language%>">
+<%- partial('partials/head') %>
+<body class="max-width mx-auto px3">
+  <% if (is_post()) { %>
+
+  <% } %>
+  <div class="content index py4">
+    <% if (!is_post()) { %>
+      <%- partial('partials/header') %>
+    <% } %>
+    <%- body %>
+    <% if (is_post()) { %>
+      
+    <% } %>
+    <%- partial('partials/footer') %>
+  </div>
+  <%- partial('partials/styles') %>
+  <%- partial('partials/scripts') %>
+</body>
+</html>
