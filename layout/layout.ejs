@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
 <%- partial('partials/head') %>
-<body class="max-width mx-auto px3">
-  <% if (is_post()) { %>
-
-  <% } %>
-  <div class="content index py4">
+<body>
+  <div class="layout-content">
     <% if (!is_post()) { %>
-      <%- partial('partials/header') %>
+      <section class="layout-aside">
+        <%-partial('partials/aside')%>
+      </section>
     <% } %>
-    <%- body %>
-    <% if (is_post()) { %>
-      
-    <% } %>
-    <%- partial('partials/footer') %>
+    <section class="layout-main">
+      <% if (!is_post()) { %>
+        <%-partial('partials/header')%>
+      <% } %>
+      <%- body %>
+      <%-partial('partials/footer')%>
+    </section>
   </div>
   <%- partial('partials/styles') %>
   <%- partial('partials/scripts') %>

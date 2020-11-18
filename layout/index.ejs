@@ -1,21 +1,14 @@
-
-<section id="writing">
-  <span class="h1"><a href="<%- url_for(theme.menu.articles) %>"><%= __('index.articles') %></a></span>
-  <ul class="post-list">
-    <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
-    <% if (theme.posts_overview.show_all_posts) { %>
-      <% var show_posts = page.posts.sort(field_sort, 'desc') %>
-    <% } else { %>
-      <% var show_posts = site.posts.sort(field_sort, 'desc').limit(theme.posts_overview.post_count || 5) %>
-    <% } %>
-    <% show_posts.each(function(post, i){ %>
-      <li class="post-item">
-        <%- partial('partials/post/date', { post: post, class_name: 'meta' }) %>
-        <span><%- partial('partials/post/title', { post: post, index: true, class_name: '' }) %></span>
-      </li>
-    <% }); %>
-  </ul>
+<ul class="post-list">
+  <% var field_sort = theme.posts_overview.sort_updated ? 'updated' : 'date' %>
   <% if (theme.posts_overview.show_all_posts) { %>
-    <%- partial('partials/pagination') %>
+    <% var show_posts = page.posts.sort(field_sort, 'desc') %>
+  <% } else { %>
+    <% var show_posts = site.posts.sort(field_sort, 'desc').limit(theme.posts_overview.post_count || 5) %>
   <% } %>
-</section>
+  <% show_posts.each(function(post, i){ %>
+    <li class="post-item">
+      <%- partial('partials/post/date', { post: post, class_name: 'meta' }) %>
+      <span><%- partial('partials/post/title', { post: post, index: true, class_name: '' }) %></span>
+    </li>
+  <% }); %>
+</ul>
