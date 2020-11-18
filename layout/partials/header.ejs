@@ -1,9 +1,9 @@
-<header id="header">
-  <div id="nav">
+<header>
+  <nav class="nav">
     <ul>
       <% for (var i in theme.menu) { %> 
         <li><a href="<%- url_for(theme.menu[i]) %>"><%= __('menu.'+i).replace('menu.', '') %></a></li>
       <% } %>
     </ul>
-  </div>
+  </nav>
 </header>

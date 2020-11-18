@@ -1,17 +1,7 @@
 # html lang
 language: en
 
-# avatar
-avatar: images/avatar.jpeg
-
-###The options below are images information
-# Home cover
-cover: /images/cover.jpeg
-# page cover
-postcover: /images/post_cover.jpeg
-# the cover of newer or older post
-pre_post: /images/footer-r.jpeg
-nex_post: /images/footer-l.jpeg
+theme_color: '#212E3B'
 
 # main menu navigation
 menu:
