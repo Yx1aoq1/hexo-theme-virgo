@@ -6,8 +6,8 @@
       <% } %>
     </ul>
   </nav>
-  <% if (!is_post()) { %>
-    <div class="header-content">
+  <div class="header-content">
+    <% if (!is_post()) { %>
       <div class="avatar">
         <a href="<%- url_for("/") %>">
           <img src="<%- url_for(theme.theme.avatar) %>" />
@@ -15,7 +15,19 @@
       </div>
       <h1><%- config.author %></h1>
       <%- partial('sociallinks') %>
-    </div>
+    <% } %>
+    <% if (is_post()) { %>
+      <div class="item">
+        <div class="pic">
+          <img src="<%- url_for(theme.theme.avatar) %>" />
+        </div>
+      </div>
+      <div class="info">
+        <h1><%=page.title%></h1>
+      </div>
+    <% } %>
+  </div>
+  <% if (!is_post()) { %>
     <div class="header-bottom"></div>
   <% } %>
 </header>
