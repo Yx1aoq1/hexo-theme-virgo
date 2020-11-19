@@ -2,6 +2,8 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -20,10 +22,20 @@ body {
   font-display: swap;
   font-weight: 400;
   font-size: 14px;
-  font-family: 'Fira Mono', monospace;
+  font-family: "Fira Mono", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei UI", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  outline: 0;
+  color: #5a5a5a;
+  text-decoration: none;
 }

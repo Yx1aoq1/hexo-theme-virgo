@@ -1,9 +1,21 @@
-<header>
-  <nav class="nav">
-    <ul>
+<header class="layout-header">
+  <nav class="header-top">
+    <ul class="menu">
       <% for (var i in theme.menu) { %> 
-        <li><a href="<%- url_for(theme.menu[i]) %>"><%= __('menu.'+i).replace('menu.', '') %></a></li>
+        <li class="menu-item <%= is_current(theme.menu[i]) ? 'active' : '' %>"><a href="<%- url_for(theme.menu[i]) %>"><%= __('menu.'+i).replace('menu.', '') %></a></li>
       <% } %>
     </ul>
   </nav>
+  <% if (!is_post()) { %>
+    <div class="header-content">
+      <div class="avatar">
+        <a href="<%- url_for("/") %>">
+          <img src="<%- url_for(theme.theme.avatar) %>" />
+        </a>
+      </div>
+      <h1><%- config.author %></h1>
+      <%- partial('sociallinks') %>
+    </div>
+    <div class="header-bottom"></div>
+  <% } %>
 </header>
