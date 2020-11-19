@@ -233,3 +233,29 @@
     }
   }
 }
+
+.archive {
+  &-list {
+    position: relative;
+    list-style: none;
+  }
+
+  &-item {
+    margin-left: 6rem;
+    border-left: .1rem dashed #999;
+    padding-left: 3rem;
+    display: flex;
+
+    &:before {
+      content: "";
+      position: absolute;
+      /* top: 50%; */
+      left: 9.3em;
+      margin-top: .5em;
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 50%;
+      background-color: #999;
+    }
+  }
+}
