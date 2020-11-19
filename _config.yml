@@ -2,13 +2,13 @@
 language: en
 
 theme:
-  color: '#212E3B'
+  color: '#2d2d2d'
   avatar: '/images/avatar.jpg'
 # main menu navigation
 menu:
   home: /
-  about: /about
   articles: /archives
+  about: /about
 
 # Customize the overview with the most recent blog posts on the index page.
 # Options:
@@ -27,6 +27,9 @@ posts_overview:
 # plugin will sort pages by date of creation.
 archive:
   sort_updated: false
+
+post:
+  show_updated: false
 
 social:
   enable: false

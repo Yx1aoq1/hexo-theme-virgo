@@ -6,8 +6,8 @@
       <% } %>
     </ul>
   </nav>
-  <div class="header-content">
-    <% if (!is_post()) { %>
+  <% if (!is_post()) { %>
+    <div class="header-content">
       <div class="avatar">
         <a href="<%- url_for("/") %>">
           <img src="<%- url_for(theme.theme.avatar) %>" />
@@ -15,19 +15,27 @@
       </div>
       <h1><%- config.author %></h1>
       <%- partial('sociallinks') %>
-    <% } %>
-    <% if (is_post()) { %>
-      <div class="item">
+    </div>
+    <div class="header-bottom"></div>
+  <% } %>
+  <% if (is_post()) { %>
+    <div class="content">
+      <div class="post-header">
         <div class="pic">
           <img src="<%- url_for(theme.theme.avatar) %>" />
         </div>
+        <div class="info">
+          <div class="title"><%=page.title%></div>
+          <div class="post-meta">
+            <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.author %><% } %></span>
+            </div>
+            <%- partial('post/date', { post: page, class_name: 'meta' }) %>
+            <%- partial('post/category') %>
+            <%- partial('post/tag') %>
+          </div>
+        </div>
       </div>
-      <div class="info">
-        <h1><%=page.title%></h1>
-      </div>
-    <% } %>
-  </div>
-  <% if (!is_post()) { %>
-    <div class="header-bottom"></div>
+    </div>
   <% } %>
 </header>

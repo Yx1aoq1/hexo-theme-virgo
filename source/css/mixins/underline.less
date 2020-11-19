@@ -1,0 +1,12 @@
+.underline (@size, @color) {
+  text-decoration: none;
+  background-image: linear-gradient(to right, @color 0, @color 100%);
+  background-position: 0 @size;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background .5s;
+
+  &:hover {
+    background-size: 100% 100%;
+  }
+}
