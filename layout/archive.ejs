@@ -1,1 +1,34 @@
-<%- partial('partials/archive') %>
+<article class="archive">
+  <% let years = {}; %>
+  <%
+    page.posts.each(post => {
+      const y = post.date.year();
+      const m = post.date.month() + 1;
+      if (!years[y]) {
+        years[y] = {}
+      }
+      if (!years[y][m]) {
+        years[y][m] = []
+      }
+      years[y][m].push(post);
+    })
+  %>
+  <% for (let year of Object.keys(years).reverse()) { %>
+    <section class="archive-wrap">
+      <h1 class="year"><%= year %></h1>
+      <% for (let month of Object.keys(years[year]).reverse()) { %>
+        <div class="month-wrap">
+          <% const posts = years[year][month]; %>
+          <div class="month"><%= date(posts[0].date, 'MMM') %></div>
+          <% posts.forEach(post => { %>
+            <div class="archive-item">
+              <%- partial('partials/post/date', { post: post, class_name: 'meta', date_format: 'MM-DD'}) %>
+              <span><%- partial('partials/post/title', { post: post, index: true, class_name: '' }) %></span>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+    </section>
+  <% } %>
+  <%- partial('partials/pagination') %>
+</article>

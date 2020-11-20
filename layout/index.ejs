@@ -10,7 +10,7 @@
       <li class="post-item">
         <h4 class="post-title"><%- partial('partials/post/title', { post: post, index: true, class_name: 'underlined' }) %></h4>
         <div class="post-meta">
-          <%- partial('partials/post/date', { post: post, class_name: 'meta' }) %>
+          <%- partial('partials/post/date', { post: post, class_name: 'meta', date_format: config.date_format }) %>
           <%- partial('partials/post/category', { page: post }) %>
           <%- partial('partials/post/tag', { page: post }) %>
         </div>

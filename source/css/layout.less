@@ -235,27 +235,89 @@
 }
 
 .archive {
-  &-list {
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  padding: 0 2.15rem;
+  background: @color-background;
+  white-space: normal;
+  word-break: break-all;
+
+  &-wrap {
     position: relative;
-    list-style: none;
+    padding: 2.15rem 0;
+    border-color: inherit;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      height: 100%;
+      border-left: 1px solid;
+      border-color: inherit;
+      content: "";
+    }
   }
 
   &-item {
-    margin-left: 6rem;
-    border-left: .1rem dashed #999;
-    padding-left: 3rem;
     display: flex;
+    position: relative;
+    display: block;
+    margin-left: 1.5rem;
+    padding: .5rem 0;
+    line-height: 2rem;
+    transition: color .15s;
+
+    .meta {
+      display: inline-block;
+    }
 
     &:before {
-      content: "";
       position: absolute;
-      /* top: 50%; */
-      left: 9.3em;
-      margin-top: .5em;
-      width: 0.5em;
-      height: 0.5em;
-      border-radius: 50%;
-      background-color: #999;
+      top: 1.5rem;
+      left: -1rem;
+      content: "-";
+      opacity: .63;
+      transform: translateY(-50%);
+    }
+  }
+
+  .year {
+    position: relative;
+    background: @color-background;
+    margin: 0;
+    line-height: 2.4em;
+    font-size: 1.78571rem;
+  }
+
+  .month {
+    background: @color-accent-2;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    padding: 0 .6em;
+    border-radius: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 2;
+    transform: translate3d(-50%,-50%,0) scale3d(.75,.75,1);
+
+    &:after {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: inherit;
+      content: "";
+      opacity: .63;
+      transition: opacity .4s;
+    }
+
+    &-wrap {
+      position: relative;
+      padding-left: 3rem;
     }
   }
 }

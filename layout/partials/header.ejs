@@ -1,7 +1,7 @@
 <header class="layout-header">
   <nav class="header-top">
     <ul class="menu">
-      <% for (var i in theme.menu) { %> 
+      <% for (let i in theme.menu) { %> 
         <li class="menu-item <%= is_current(theme.menu[i]) ? 'active' : '' %>"><a href="<%- url_for(theme.menu[i]) %>"><%= __('menu.'+i).replace('menu.', '') %></a></li>
       <% } %>
     </ul>
@@ -30,7 +30,7 @@
             <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
               <span itemprop="name"><% if (page.author) { %><%- page.author %><% } else { %><%- config.author %><% } %></span>
             </div>
-            <%- partial('post/date', { post: page, class_name: 'meta' }) %>
+            <%- partial('post/date', { post: page, class_name: 'meta', date_format: config.date_format }) %>
             <%- partial('post/category') %>
             <%- partial('post/tag') %>
           </div>
