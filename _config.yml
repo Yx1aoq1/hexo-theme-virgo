@@ -8,6 +8,7 @@ theme:
 menu:
   home: /
   articles: /archives
+  category: /categories
   about: /about
 
 # Customize the overview with the most recent blog posts on the index page.

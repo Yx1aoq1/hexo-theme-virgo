@@ -2,7 +2,9 @@
   <nav class="header-top">
     <ul class="menu">
       <% for (let i in theme.menu) { %> 
-        <li class="menu-item <%= is_current(theme.menu[i]) ? 'active' : '' %>"><a href="<%- url_for(theme.menu[i]) %>"><%= __('menu.'+i).replace('menu.', '') %></a></li>
+        <li class="menu-item <%= is_current(theme.menu[i]) ? 'active' : '' %>">
+          <a href="<%- url_for(theme.menu[i]) %>"><%= __('menu.'+i).replace('menu.', '') %></a>
+        </li>
       <% } %>
     </ul>
   </nav>
