@@ -14,7 +14,9 @@
         </a>
       </div>
       <h1><%- config.author %></h1>
-      <%- partial('sociallinks') %>
+      <% if (theme.social.enable) { %>
+        <%- partial('sociallinks') %>
+      <% } %>
     </div>
     <div class="header-bottom"></div>
   <% } %>

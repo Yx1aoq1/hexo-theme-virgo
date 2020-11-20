@@ -1,0 +1,21 @@
+.article {
+  &-category {
+    &:before {
+      content: "|";
+    }
+  }
+
+  &-tag {
+    &:before {
+      content: "|";
+    }
+
+    .tag-link {
+      .underline(1.2em, @color-link);
+
+      &:before {
+        content: "#";
+      }
+    }
+  }
+}
