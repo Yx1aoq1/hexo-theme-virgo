@@ -1,3 +1,21 @@
 <article class="content">
   <%-page.content%>
 </article>
+<div class="prev-or-next">
+  <div class="post-foot-next">
+    <% if(page.next) { %>
+      <a href="<%- url_for(page.next.path) %>" target="_self">
+        <i class="fas fa-angle-left"></i>
+        <span><%= __('post.desktop.previous') %></span>
+      </a>
+    <% } %>
+  </div>
+  <div class="post-foot-prev">
+    <% if(page.prev) { %>
+      <a href="<%- url_for(page.prev.path) %>" target="_self">
+        <span><%= __('post.desktop.next') %></span>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    <% } %>
+  </div>
+</div>

@@ -16,6 +16,9 @@
         </a>
       </div>
       <h1><%- config.author %></h1>
+      <% if (config.description) { %>
+        <p class="description"><%= config.description %></p>
+      <% } %>
       <% if (theme.social.enable) { %>
         <%- partial('sociallinks') %>
       <% } %>

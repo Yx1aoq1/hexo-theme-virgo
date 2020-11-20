@@ -23,7 +23,7 @@
           <% posts.forEach(post => { %>
             <div class="archive-item">
               <%- partial('partials/post/date', { post: post, class_name: 'inline-block', date_format: 'MM-DD'}) %>
-              <span><%- partial('partials/post/title', { post: post, index: true, class_name: '' }) %></span>
+              <span><%- partial('partials/post/title', { post: post, index: true, class_name: 'underlined' }) %></span>
             </div>
           <% }) %>
         </div>

@@ -1,1 +1,11 @@
-categories
+<section class="page">
+  <% site.categories.each(item => { %>
+    <div class="archive-item">
+      <a href="<%= item.name %>">
+        <i class="fas fa-archive"></i>
+        <%= item.name %>
+      </a>
+      <span class="category-list-count"><%= item.posts.length %></span>
+    </div>
+  <% }) %>
+</section>

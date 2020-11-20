@@ -1,7 +1,13 @@
 <div class="social-links">
-  <% for (var l in theme.social.links) {%>
-    <a href="<%= theme.social.links[l].link%>" target="_blank">
-      <i class="fa fa-<%= theme.social.links[l].icon%> fa-fw"></i>
-    </a>
+  <% for (let l in theme.social.links) {%>
+    <% if (l == 'mail') { %>
+      <a href="<%= theme.social.links[l]%>" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+    <% } else { %>
+      <a href="<%= theme.social.links[l]%>" target="_blank">
+        <i class="fab fa-<%= l %>"></i>
+      </a>
+    <% } %>
   <%}%>
 </div>
