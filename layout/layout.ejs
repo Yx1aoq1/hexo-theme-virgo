@@ -2,6 +2,9 @@
 <html lang="<%=config.language%>">
   <%- partial('partials/head') %>
   <body style="background-color: <%- theme.theme.color%>">
+    <% if (is_post()) { %>
+      <%- partial('partials/post/actions_desktop') %>
+    <% } %>
     <div class="layout-content">
       <%-partial('partials/header')%>
       <main class="layout-main">
