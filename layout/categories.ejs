@@ -2,9 +2,18 @@
   <ul class="accordion-menu">
     <% site.categories.each(item => { %>
       <li class="has-children">
-        <input type="checkbox" name="<%= item.name %>" />
-        <label><%= item.name %></label>
-        
+        <input type="checkbox" name="<%= item.name %>" id="<%= item.name %>" />
+        <label for="<%= item.name %>">
+          <i class="fas fa-chevron-right"></i>
+          <%= item.name %>
+        </label>
+        <ul>
+          <% item.posts.each(post => { %>
+            <li>
+              <%- partial('partials/post/title', { post: post, index: true, class_name: '' }) %>
+            </li>
+          <% }) %>
+        </ul>
       </li>
     <% }) %>
   </ul>
