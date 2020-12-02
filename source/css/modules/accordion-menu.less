@@ -17,17 +17,6 @@
     border-bottom: 1px solid #f0f0f0;
   }
 
-  li > a {
-    padding-left: 1.6rem;
-    font-size: 0.9rem;
-    border-left: .4rem solid #fff;
-
-    &:hover {
-      background: #f8f9fa;
-      border-left: .4rem solid @color-link;
-    }
-  }
-
   input[type=checkbox] {
     position: absolute;
     opacity: 0;
@@ -47,10 +36,22 @@
     margin-right: .6rem;
   }
 
-  label, a {
+  label,
+  .sub-menu li {
     padding: 7px 0px 7px 1em;
     position: relative;
     display: block;
     font-size: 1rem;
+  }
+
+  .sub-menu li {
+    padding-left: 1.6rem;
+    font-size: 0.9rem;
+    border-left: .4rem solid #fff;
+
+    &:hover {
+      background: #f8f9fa;
+      border-left: .4rem solid @color-link;
+    }
   }
 }

@@ -7,9 +7,10 @@
           <i class="fas fa-chevron-right"></i>
           <%= item.name %>
         </label>
-        <ul>
-          <% item.posts.each(post => { %>
+        <ul class="sub-menu">
+          <% item.posts.sort('date', 'desc').each(post => { %>
             <li>
+              <%- partial('partials/post/date', { post: post, class_name: 'inline-block text-color-desc', date_format: 'YYYY/MM/DD'}) %>
               <%- partial('partials/post/title', { post: post, index: true, class_name: '' }) %>
             </li>
           <% }) %>
